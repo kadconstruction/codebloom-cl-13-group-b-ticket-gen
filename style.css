@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inconsolata',monospace;
+background:
+linear-gradient(#08051CBF,#25096895),
+url("background-mobile.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+color:white;
+min-height:100vh;
+overflow-x:hidden;
+margin: 10px 3px 50px 3px;
+}
+
+.top-header{
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+}
+
+.top-header h1{
+font-family: 'Outfit', sans-serif;
+font-size:1.2rem;
+font-weight: 800;
+letter-spacing:1px;
+margin-bottom: -15px;
+}
+.top-header h1 i{
+background: rgba(255,255,255,.06);
+color: #ff866b;
+font-size: 30px;
+}
+.sub-header{
+text-align: center;
+padding: 20px;
+max-width: 700px;
+margin: auto;
+}
+
+.sub-header h2{
+font-size: 1.5rem;
+line-height: 1.5;
+word-spacing: -7px;
+margin-bottom: 18px;
+font-weight: 800;
+}
+
+.sub-header p{
+color: #d0d0d0;
+font-size: 14.5px;
+line-height:1.5;
+word-spacing: -3px;
+margin-bottom: -18px;
+}
+.form-page{
+width:100%;
+max-width:520px;
+margin:auto;
+padding:20px;
+}
+
+#ticket-form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.form-group{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.form-group label{
+font-size:.80rem;
+margin-top: 10px;
+}
+
+.form-group input{
+width:100%;
+padding:14px 10px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,.18);
+background:rgba(255,255,255,.06);
+color:white;
+font-size:13px;
+outline:none;
+transition:.3s;
+}
+
+.form-group input:focus{
+border-color:#ff8364;
+box-shadow:0 0 0 4px rgba(255,131,100,.15);
+}
+
+.form-group input::placeholder{
+color:#cfcfcf;
+}
+
+.avatar-upload{
+border:2px dashed rgba(255,255,255,.18);
+padding:8px;
+border-radius: 9px;
+background:rgba(255,255,255,.05);
+}
+
+.upload-box{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:12px;
+cursor:pointer;
+padding:1px;
+}
+
+.upload-box i{
+font-size:30px;
+color:#ff866b;
+background:rgba(255,255,255,.06);
+padding:12px;
+border-radius:16px;
+}
+
+.upload-box p{
+color:#d5d5d5;
+font-size: 12px;
+}
+
+#preview{
+width:80px;
+height:80px;
+border-radius:18px;
+object-fit:cover;
+display:none;
+}
+
+small{
+color:#c5c5c5;
+font-size: 10px;
+}
+
+.btn{
+width:100%;
+padding: 14px 30px;
+margin-top: 30px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:800;
+font-size:15px;
+background:linear-gradient(90deg,#ff8d70,#ff6d50);
+color:#170b07;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 18px 40px rgba(255,109,80,.3);
+}
+
+/**** Ticket session ****/
+#ticket-section{
+display: none;
+flex-direction:column;
+align-items:center;
+padding:20px;
+}
+
+.sub-header2{
+text-align:center;
+max-width:700px;
+}
+
+.sub-header2 h2{
+font-size: 1.3rem;
+line-height: 1.1;
+word-spacing: -7px;
+margin-bottom: 10px;
+font-weight: 800;
+}
+
+.sub-header2 span{
+background:linear-gradient(90deg,#ff8a66,#ffd8ca);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.sub-header2 p{
+color:#d2d2d2;
+margin-top:18px;
+font-size: 13.5px;
+line-height:1.3;
+word-spacing: -3px;
+margin-bottom: -20px;
+}
+
+.ticket-card{
+margin-top:40px;
+width:100%;
+max-width:650px;
+padding:32px;
+border-radius:28px;
+background:linear-gradient(
+135deg,
+rgba(28,20,57,.92),
+rgba(69,35,110,.92)
+);
+display:flex;
+justify-content:space-between;
+align-items:center;
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 30px 80px rgba(0,0,0,.45);
+}
+
+.ticket-left{
+display:flex;
+flex-direction:column;
+gap:55px;
+}
+
+.ticket-top{
+display:flex;
+gap:15px;
+align-items:center;
+}
+
+.ticket-top i{
+background: rgba(255,255,255,.06);
+color: #ff866b;
+font-size: 30px;
+}
+
+.ticket-top h2{
+font-family: 'Outfit', sans-serif;
+font-size:1rem;
+font-weight: 800;
+letter-spacing:1px;
+}
+
+.ticket-top p{
+color:#d6d6d6;
+}
+
+.ticket-user{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.ticket-top i{
+background:rgba(255,255,255,.06);
+object-fit:cover;
+}
+
+.ticket-top p{
+font-size: 12px; 
+}
+
+.ticket-user h3{
+font-size:0.9rem;
+}
+
+.ticket-user p{
+color:#d0d0d0;
+font-size: 12px;
+}
+
+.ticket-user img{
+height: 45px;
+width: 45px;
+border-radius: 5px;
+}
+
+.ticket-right{
+padding-left:30px;
+border-left:4px dashed rgba(255,255,255,.18);
+}
+
+.ticket-right span{
+writing-mode:vertical-rl;
+font-size:2rem;
+color:rgba(255,255,255,.45);
+}
+
+.hidden{
+display:none !important;
+}
+
+/*****  DESKTOP  *****/
+@media screen and (min-width:1024px){
+
+body{
+margin:0;
+}
+.top-header{
+padding:40px 0 20px;
+}
+.sub-header,
+.sub-header2{
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+padding:20px 0;
+text-align:center;
+}
+.sub-header h2,
+.sub-header2 h2{
+font-size:3.5rem;
+line-height:1.15;
+}
+.sub-header p,
+.sub-header2 p{
+max-width: 650px;
+margin: 20px auto 0;
+font-size: 20px;
+}
+.form-page{
+width:100%;
+max-width:620px;
+margin:auto;
+}
+#ticket-form{
+width:100%;
+}
+.ticket-card{
+width:700px;
+margin:50px auto;
+}
+.ticket-user img{
+width:70px;
+height:70px;
+}
+.ticket-right span{
+font-size:2.5rem;
+}
+   }

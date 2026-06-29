@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Conference ticket generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@800&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+      <!-- LANDING PAGE/FORM -->
+  <!-- Header-one -->
+  <header class="top-header">
+   <h1><i class="bx bx-layer"></i> Cl-13 Grp-B Conf</h1>
+  </header> 
+  
+  <section id="sub-header">
+   <div class="sub-header">
+     <h2>Your Journey to Coding Conf 2026 Starts Here!
+     </h2> 
+     <p>Secure your spot at next year's biggest coding conference.</p>
+   </div>
+  </section>
+    
+     <!-- Form page -->
+  <section id="form-page">
+    <div class="form-page">
+     <form id="ticket-form">
+         
+      <!-- Avatar-upload-->
+      <div class="form-group">
+      <label>Upload Avatar</label>
+      <div class="avatar-upload">
+      <input type="file" id="avatar" accept="image/png, image/jpeg" hidden>
+      <label for="avatar" class="upload-box">
+      <i class="bx bx-cloud-upload" id="uploadIcon"></i>
+      <p id="uploadText">Drag and drop or click to upload</p>      
+      <img id="preview" style="display:none; height:15%; width:15%; margin-right:auto; margin-left:auto;"/>
+      </label>
+     </div>
+     
+     <small>
+<i class="bx bx-info-circle"></i> Upload your photo (JPG or PNG, max size: 500KB)
+     </small>
+     </div>
+      
+      <!-- Name -->
+      <div class="form-group">
+      <label for="name">Full Name</label> 
+      <input type="text" id="name" required>
+      </div>
+      
+      <!-- Email -->
+      <div class="form-group">
+      <label for="email">Email Adress</label> 
+      <input type="email" id="email" placeholder="example@gmail.com" required> 
+      </div>
+      
+      <!-- Github -->
+      <div class="form-group">
+      <label for="github">GitHub Username</label>   
+      <input type="text" id="github" placeholder="@yourusername" required>
+      </div>
+      
+      <!-- Button -->
+      <button type="submit" class="btn" >Generate My Ticket</button>
+     </form>
+    </div>
+  </section>
+  
+       <!-- GENERATED TICKET PAGE -->
+         
+    <section id="ticket-section">
+      <!-- Sub header 2 -->
+      <header class="sub-header2">
+        <h2>Congrats,<span id="ticket-name">Johnathan Kristof</span>!</h2>
+        <h2>Your ticket is ready.</h2>
+        <p>We’ve emailed your ticket to
+        <span id="ticket-email">
+            techie@gmail.com
+        </span> and will send updates in the run up to the event.
+        </p>
+      </header>
+
+        <!-- Card -->
+        <article class="ticket-card">
+           
+        <!-- Ticket-left -->
+        <div class="ticket-left">
+            
+        <!-- Ticket-left -->
+         <div class="ticket-top">
+         <i class="bx bx-layer"></i>
+         <div class="ticket-info">
+           <h2>Cl-13 Grp-B Conf</h2>
+           <p id="ticket-date"></p>
+         </div>
+       </div>
+       
+          <!-- Ticket-Area -->
+       <div class="ticket-user">
+       <img src="image-avatar.jpg" id="ticket-avatar" alt="User Avatar">
+       <div class="user-details">
+       <h3 id="ticket-display-name">
+        Techie
+       </h3>
+       <p id="ticket-github">@Techie</p>
+       </div>
+       </div>
+       </div>
+       
+        <!-- RIGHT SIDE -->
+        <div class="ticket-right">
+          <span id="ticket-number">
+          </span>
+        </div>
+      </article>
+      </section>
+  
+  <!-- <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer> -->
+  
+<script>
+
+const $=id=>document.getElementById(id);
+
+const form=$("ticket-form"),
+avatar=$("avatar"),
+preview=$("preview");
+
+$("ticket-section").classList.add("hidden");
+
+// Preview
+
+avatar.onchange=()=>{
+
+if(!avatar.files[0])return;
+
+preview.src=
+URL.createObjectURL(
+avatar.files[0]
+);
+
+preview.style.display="block";
+
+$("uploadIcon").style.display="none";
+
+$("uploadText").style.display="none";
+
+};
+
+// Submit
+
+form.onsubmit=e=>{
+
+e.preventDefault();
+
+$("ticket-name").textContent=
+$("ticket-display-name").textContent=
+$("name").value;
+
+$("ticket-email").textContent=
+$("email").value;
+
+$("ticket-github").textContent=
+$("github").value;
+
+$("ticket-date").textContent=
+new Date().toLocaleDateString(
+"en-US",
+{
+month:"short",
+day:"numeric",
+year:"numeric"
+}
+)+" / Lagos, NG";
+
+$("ticket-number").textContent=
+"#"+
+Math.floor(
+10000+
+Math.random()*90000
+);
+
+if(avatar.files[0])
+$("ticket-avatar").src=
+URL.createObjectURL(
+avatar.files[0]
+);
+
+$("form-page")
+.classList.add("hidden");
+
+$("sub-header")
+.classList.add("hidden");
+
+$("ticket-section")
+.classList.remove("hidden");
+
+$("ticket-section")
+.style.display="flex";
+
+window.scrollTo(0,0);
+
+};
+
+</script>
+</body>
+</html>
